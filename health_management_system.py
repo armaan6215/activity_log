@@ -7,10 +7,17 @@ def start():
     print("What do you want to do?")
     entry()
 
-def write_file():
-    content = input("Enter your log detail")
+def meal_log():
+    meal = input("What did you eat today? ")
+    write_file("meal", meal)
+
+def exercise_log():
+    exercise = input("Which exercise did you do today? ")
+    write_file("exercise", exercise)
+
+def write_file(activity, activity_detail):
     with open(f"{name}.txt", "a") as file:
-        file.write(f"{content}\n")
+        file.write(f"{activity}: {activity_detail}\n")
 
 def read_file():
     try:
@@ -31,7 +38,13 @@ def entry():
     choice = int(input("1: Log\n2: Retrieve\n"))
 
     if choice == 1:
-        write_file()
+        option = int(input("What do you want to log?\n1: Meal\n2: Exercise"))
+        if option == 1:
+            meal_log()
+        elif option == 2:
+            exercise_log()
+        else:
+            print("Invalid input")
 
     elif choice == 2:
         read_file()
