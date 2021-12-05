@@ -1,6 +1,3 @@
-# 3 Clients - Harry, Rohan, Hammad
-# Total 6 files:
-# Write a function that when executed takes as input client_name
 name = input("enter name: ")
 
 def start():
