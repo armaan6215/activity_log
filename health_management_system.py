@@ -18,6 +18,7 @@ def exercise_log():
 def write_file(activity, activity_detail):
     with open(f"{name}.txt", "a") as file:
         file.write(f"{activity}: {activity_detail}\n")
+    print(f"{activity} added successfully")
 
 def read_file():
     try:
